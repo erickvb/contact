@@ -1,4 +1,5 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php ob_start();	
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Usuario extends CI_Controller {
 
 	/**
@@ -85,4 +86,30 @@ class Usuario extends CI_Controller {
 		//$this->load->view("usuario/listado_user",$data);
 	
 	}
+	
+	public function registrarse(){
+		$data = array();
+		$this->load->view("usuario/registro",$data);
+	}
+	
+	public function doRegistrar(){
+		
+		$email = $this->input->post("email");
+		$usuario =  $this->input->post("usuario");
+		$password =  $this->input->post("password");
+		
+		$this->usuario_model->setEmail($email);
+		$this->usuario_model->setUsuario($usuario);
+		$this->usuario_model->setClave($password);
+		$this->usuario_model->setTipo("1");
+		
+		$rs = $this->usuario_model->registrar();
+		if($rs){
+			redirect('/usuario', 'refresh');
+		}else{
+			echo "Error al registrar";
+		}
+		
+	}
+	
 }

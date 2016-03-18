@@ -6,12 +6,20 @@ class Usuario_model extends CI_Model {
 	public $date;
 	private $usuario;
 	private $clave;
+	private $email;
+	private $tipo;
 	
 	public function setUsuario($user){
 		$this->usuario = $user;
 	}
 	public function setClave($pass){
 		$this->clave = $pass;
+	}
+	public function setEmail($email){
+		$this->email = $email;
+	}
+	public function setTipo($tipo){
+		$this->tipo = $tipo;
 	}
 
 	public function __construct()
@@ -66,5 +74,22 @@ class Usuario_model extends CI_Model {
 		$query = $this->db->get('usuario',1);
 		return $query;
 	}
-
+	
+	
+	public function registrar(){
+		
+		$data = array(
+		   'email' => $this->db->escape_str($this->email) ,
+		   'cuenta' => $this->db->escape_str($this->usuario) ,
+		   'clave' => $this->db->escape_str($this->clave),
+		   'tipo_usuario' =>$this->tipo
+		);
+		
+		$rs = $this->db->insert('usuario', $data);
+// 		echo "return:".$rs;
+		return $rs;
+		
+	}
+	
+	
 }
