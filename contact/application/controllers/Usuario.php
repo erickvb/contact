@@ -30,41 +30,6 @@ class Usuario extends CI_Controller {
 	{
 		$this->load->view('usuario/login');
 	}
-	public function login(){
-		
-		$user = $this->input->post("usuario");
-		$pass =  $this->input->post("clave");
-		
-		$this->usuario_model->setUsuario($user);
-		$this->usuario_model->setClave($pass);
-		$rs = $this->usuario_model->doLogin();
-		
-		if($rs->num_rows()>0){
-			//existe user
-			$data = null;
-			foreach ($rs->result() as $row)
-			{
-				$data = array("nombre"=>$row->nombre,
-						"apellidos"=>$row->apellidos,
-						"nick"=>$row->nick,
-						"avatar"=>$row->avatar,
-						"id_usuario"=>$row->id_usuario
-				);
-				//echo $row->nombre;
-				//echo $row->apellidos;
-				//echo $row->nick;
-				//echo $row->avatar;
-			}
-			
-			$this->load->view("usuario/home",$data);
-		}else{
-			//
-			echo "No existe Usuario";
-		}
-		
-		
-		
-	}
 	
 	public function listarUsuarios(){
 		$rs = $this->usuario_model->listar();
@@ -87,33 +52,23 @@ class Usuario extends CI_Controller {
 	
 	}
 	
-	public function registrarse(){
-		$data = array();
-		$this->load->view("usuario/registro",$data);
-	}
 	
-	public function doRegistrar(){
-		
-		$email = $this->input->post("email");
-		$usuario =  $this->input->post("usuario");
-		$password =  $this->input->post("password");
-		
-		$this->usuario_model->setEmail($email);
-		$this->usuario_model->setUsuario($usuario);
-		$this->usuario_model->setClave($password);
-		$this->usuario_model->setTipo("1");
-		
-		$rs = $this->usuario_model->registrar();
-		if($rs){
-			redirect('/usuario', 'refresh');
-		}else{
-			echo "Error al registrar";
-		}
-		
-	}
 	public function  profile(){
 		$this->load->view("usuario/profile");
 		
 	}
 	
+	public function information(){
+		$this->load->view("usuario/information");
+		
+	}
+	
+	public function account(){
+		$this->load->view("usuario/micuenta");
+	
+	}
+	
+	public function picture(){
+		$this->load->view("usuario/pictures");
+	}
 }
