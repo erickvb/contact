@@ -53,7 +53,7 @@
 class="login">
 <div class="page-header"><h1>Register</h1> </div>
 
-<?=form_open('/access/login' ,array('class' => 'form-validate form-horizontal well', 'id' => 'frmLogin') )?>
+<?=form_open('/access/doLogin' ,array('class' => 'form-validate form-horizontal well', 'id' => 'frmLogin') )?>
 
 
 <fieldset>

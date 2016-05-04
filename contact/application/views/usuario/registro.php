@@ -135,7 +135,7 @@ class="jm-module-content clearfix ">
 <li class="item-646">
 <a href="jm-dating/contact" >Contact</a></li>
 <li class="item-572 current active">
-<a href="jm-dating/login-form" >Login</a></li>
+<a href="<?=site_url('/login')?>" >Login</a></li>
 <li class="item-649">
 <a href="jm-dating/offline" >Offline</a></li>
 <li class="item-573">

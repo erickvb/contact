@@ -14,6 +14,13 @@ class Access extends CI_Controller {
 		$this->load->view('offline');
 	}
 	
+	
+	
+	public function login(){
+		$data = array();
+		$this->load->view("usuario/login",$data);
+	}
+	
 	public function register(){
 		$data = array();
 		$this->load->view("usuario/registro",$data);
@@ -39,10 +46,10 @@ class Access extends CI_Controller {
 	
 	}
 	
-	public function login(){
-	
+	public function doLogin(){
+		$this->load->model("usuario_model");
 		$user = $this->input->post("username");
-		$pass =  $this->input->post("clave");
+		$pass =  $this->input->post("password");
 	
 		$this->usuario_model->setUsuario($user);
 		$this->usuario_model->setClave($pass);
@@ -65,7 +72,8 @@ class Access extends CI_Controller {
 				//echo $row->avatar;
 			}
 				
-			$this->load->view("usuario/home",$data);
+			//$this->load->view("usuario/home",$data);
+			redirect('/', 'refresh');
 		}else{
 			//
 			echo "No existe Usuario";
