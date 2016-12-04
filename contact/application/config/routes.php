@@ -55,6 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['register'] = 'access/register';
 $route['doRegister'] = 'access/doRegister';
 $route['login'] = 'access/login';
+$route['logout'] = 'access/logout';
+$route['user/(:any)'] = 'micuenta/$1';
+
 
 
 
