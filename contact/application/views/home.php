@@ -77,7 +77,7 @@
             <div class="dj-items-blog">
                <div class="djcf_items_blog">
                   <!-- lista template-->
-                  
+                 <!--  -->
                   <div class="clear_both" ></div>
                </div>
             </div>
