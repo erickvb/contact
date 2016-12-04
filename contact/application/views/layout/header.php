@@ -64,8 +64,10 @@ rel="stylesheet" href="<?=base_url()?>public/jm-dating/templates/jm-dating/css/d
 		}</style> 
 	
 	<script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery.min.js" type="text/javascript"></script>
-	 <script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	 <!-- <script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	 -->
 	  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script> 
+	
 	  <script src="<?=base_url()?>public/jm-dating/templates/jm-dating/cache/jmf_bddef3caa55d40fcffc61142d3aab2ea.js?t=1458294672" type="text/javascript"></script> 
 	  <script src="http://maps.google.com/maps/api/js?sensor=false&amp;v=3.exp&amp;libraries=places" type="text/javascript">
 	  </script>

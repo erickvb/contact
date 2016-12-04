@@ -39,7 +39,7 @@
 	</li>
 	
 	<li  class="active">
-		<span > Register </span>
+		<span > Login </span>
 	
 	</li>
 </ul>
@@ -51,7 +51,7 @@
 <div id="jm-content" class="span9 offset3" data-xtablet="span12" data-tablet="span12" data-mobile="span12">
 <div id="jm-maincontent"><div
 class="login">
-<div class="page-header"><h1>Register</h1> </div>
+<div class="page-header"><h1>Login</h1> </div>
 
 <?=form_open('/access/doLogin' ,array('class' => 'form-validate form-horizontal well', 'id' => 'frmLogin') )?>
 

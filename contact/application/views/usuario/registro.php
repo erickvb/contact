@@ -105,8 +105,7 @@ class="controls">
  -->
 <div class="control-group">
 <div class="controls">
-<button type="submit" class="btn btn-primary">
-Log in					</button></div></div>
+<button type="submit" class="btn btn-primary"> Registrarse</button></div></div>
 
 </fieldset>
 

@@ -91,5 +91,21 @@ class Usuario_model extends CI_Model {
 		
 	}
 	
+	public function actualizarInformacion($usuario){
+	
+		$data = array(
+				'email' => $this->db->escape_str($this->email) ,
+				'cuenta' => $this->db->escape_str($this->usuario) ,
+				'clave' => $this->db->escape_str($this->clave),
+				'tipo_usuario' =>$this->tipo
+		);
+		$this->db->where('id_usuario', $usuario->id_usuario);
+		$rs =  $this->db->update('usuario', $usuario);
+		
+		//$rs = $this->db->insert('usuario', $data);
+		// 		echo "return:".$rs;
+		return $rs;
+	
+	}
 	
 }
