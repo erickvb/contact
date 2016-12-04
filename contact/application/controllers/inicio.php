@@ -11,8 +11,17 @@ class Inicio extends CI_Controller {
 	
 	public function index()
 	{  
+		
+		$curruser = $this->session->userdata('usuario');
+		
+		if(($this->session->has_userdata('usuario'))){
+			$this->load->view('home');
+		}else{
+			$this->load->view('offline');
+		}
+		
 		//
-		$this->load->view('offline');
+//		$this->load->view('offline');
 		
 // 		$this->load->view('home');
 	}

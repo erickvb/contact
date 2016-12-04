@@ -1,6 +1,6 @@
 <?php ob_start();	
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Usuario extends CI_Controller {
+class Micuenta extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -70,5 +70,37 @@ class Usuario extends CI_Controller {
 	
 	public function picture(){
 		$this->load->view("usuario/pictures");
+	}
+	
+	public function updateInformation(){
+		$usuario = new Usuario();
+		
+		$curruser = $this->session->userdata('usuario');
+		
+		$usuario->id_nacionalidad =  $this->input->post("cboNacionalidad");
+		$usuario->id_pais = $this->input->post("cboPais");
+		$usuario->id_ciudad = $this->input->post("cboCiudad");
+		$usuario->id_distrito = $this->input->post("cboDistrito");
+		$usuario->nombre = $this->input->post("nombre");
+		$usuario->apellidos = $this->input->post("apellidos");
+		$usuario->sexo = $this->input->post("sexo");
+		$usuario->email = $this->input->post("email");
+		$usuario->nick = $this->input->post("nick");
+		$usuario->telefono = $this->input->post("telefono");
+		$usuario->id_usuario = $curruser->id_usuario;
+		
+		
+		
+		$tipo = Tipo_usuario::CLIENTE;
+		
+	
+		
+		 
+		$rs = $this->usuario_model->actualizarInformacion($usuario);
+		echo $rs;
+		
+		
+	//	if($rs){
+		
 	}
 }

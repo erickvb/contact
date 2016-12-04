@@ -25,26 +25,26 @@ class Ubigeo extends CI_Controller {
 		$this->load->model("ubigeo_model");
 		
 	}
-	public function paises(){
+	public function countries(){
 		$rs = $this->ubigeo_model->listarPaises();
 		//$data = array("result"=>$rs);
 		$this->output->set_content_type('application/json')->set_output(json_encode($rs->result_array()));
 	}
 	
-	public function regiones(){
+	public function states(){
 		$idUbigeo = $this->uri->segment('3');
 		$rs = $this->ubigeo_model->listarRegiones($idUbigeo);
 		//$data = array("result"=>$rs);
 		$this->output->set_content_type('application/json')->set_output(json_encode($rs->result_array()));
 	}
-	public function ciudades(){
+	public function cities(){
 		$idUbigeo = $this->uri->segment('3');
 		$rs = $this->ubigeo_model->listarCiudades($idUbigeo);
 		//$data = array("result"=>$rs);
 		$this->output->set_content_type('application/json')->set_output(json_encode($rs->result_array()));
 		
 	}
-	public function distritos(){
+	public function districts(){
 		$idUbigeo = $this->uri->segment('3');
 		$rs = $this->ubigeo_model->listarDistritos($idUbigeo);
 		//$data = array("result"=>$rs);
