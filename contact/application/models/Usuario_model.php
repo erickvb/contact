@@ -66,7 +66,8 @@ class Usuario_model extends CI_Model {
 		//$this->db->where('cuenta', $this->usuario);
 		//$this->db->where('clave', $this->clave);
 		$query = $this->db->get('usuario',100);
-		return $query;
+		$rows = $query->custom_result_object('Usuario');
+		return $rows;
 	}
 	
 	public function obtenerById($id){
@@ -106,6 +107,19 @@ class Usuario_model extends CI_Model {
 		// 		echo "return:".$rs;
 		return $rs;
 	
+	}
+	
+	public function obtenerPerfil(){
+		
+		
+	}
+	
+	public function obtenerGaleriaFotos($id_usuario){
+		$this->db->where('id_usuario', $id_usuario);
+		$rs = $this->db->get('galeria');
+		//$rows = $query->custom_result_object('Usuario');
+		return $rs;
+		
 	}
 	
 }

@@ -56,7 +56,7 @@ $route['register'] = 'access/register';
 $route['doRegister'] = 'access/doRegister';
 $route['login'] = 'access/login';
 $route['logout'] = 'access/logout';
-$route['user/(:any)'] = 'micuenta/$1';
+$route['account/(:any)'] = 'micuenta/$1';
 
 
 

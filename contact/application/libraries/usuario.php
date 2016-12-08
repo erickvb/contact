@@ -16,6 +16,7 @@ class Usuario{
 	public $id_distrito;
 	public $sexo;
 	public $telefono;
+	public $foto_principal;
 
 // 	public function setUsuario($user){
 // 		$this->usuario = $user;

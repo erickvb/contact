@@ -225,8 +225,8 @@ class="login">
 	</div>
 	<div class="jm-module-content clearfix ">
 		<ul class="nav menu">
-			<li class="item-646 current active"><a href="<?=site_url('/user/information')?>" >Mi informaci&oacute;n</a></li>
-			<li class="item-572 "><a href="<?=site_url('/user/profile')?>" >Mi perfil</a></li>
+			<li class="item-646 current active"><a href="<?=site_url('/account/information')?>" >Mi informaci&oacute;n</a></li>
+			<li class="item-572 "><a href="<?=site_url('/account/profile')?>" >Mi perfil</a></li>
 			<li class="item-573"><a href="jm-dating/registration-form" >Mis fotos</a></li>
 			<li class="item-647"><a href="jm-dating/search" >Licencia</a></li>
 			<li class="item-589"><a href="jm-dating/user-profile" >Seguridad</a></li>

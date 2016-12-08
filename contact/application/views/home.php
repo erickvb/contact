@@ -77,6 +77,7 @@
             <div class="dj-items-blog">
                <div class="djcf_items_blog">
                   <!-- lista template-->
+                  <div id="list-user"></div>
                  <!--  -->
                   <div class="clear_both" ></div>
                </div>
@@ -97,24 +98,27 @@
 
 <? $this->load->view("layout/footer.php")?>
 <script type="text/javascript">
+$(document).ready(function(){
 var myUser = new User();
 myUser.listUser();
+});
 </script>
 
 <script id="user-template" type="text/x-handlebars-template">
+{{#users}}
      <div class="item_box item_auction" style="width:24.9%;">
                      <div class="item_box_bg0">
                         <div class="item_box_in">
                            <div class="item_box_in2 clearfix">
                               <div class="title">
-                                 <h2><a href="jm-dating/single-ad-view-with-bids" >Vivian White</a></h2>
+                                 <h2><a href="jm-dating/single-ad-view-with-bids" >{{nick}}</a></h2>
                                  <span class="type_button" style="display:inline-block; border:0px solid #DEDEDE;background:#6B4ECC;color:#FFFFFF;font-size: 10px;font-weight: bold;line-height: 20px;margin: 2px;padding: 0 5px;vertical-align:middle;" >FREEKY</span>
                                  <span class="auction_icon" ></span>
                               </div>
                               <div class="blog_det">
                                  <div class="item_img">
                                     <a href="jm-dating/single-ad-view-with-bids">
-                                    <img src="jm-dating/components/com_djclassifieds/images/item/78_i14_thm.jpg" alt="i14"  /></a>
+                                    <img src="<?=base_url()?>public/static/image/{{foto_principal}}" alt="{{nick}}"  /></a>
                                  </div>
                                  <div class="region">
                                     <span class="label_title"></span>New York
@@ -133,6 +137,7 @@ myUser.listUser();
                         </div>
                      </div>
                   </div>
+{{/users}}
 </script>
 
 </div>

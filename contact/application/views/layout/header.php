@@ -63,18 +63,19 @@ rel="stylesheet" href="<?=base_url()?>public/jm-dating/templates/jm-dating/css/d
 			#dj-megamenu141mobile { display: block; }
 		}</style> 
 	
-	<script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery.min.js" type="text/javascript"></script>
-	 <!-- <script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
-	 -->
-	  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script> 
+	<script src="<?=base_url()?>public/static/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<!-- <script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	-->
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script> 
 	
-	  <script src="<?=base_url()?>public/jm-dating/templates/jm-dating/cache/jmf_bddef3caa55d40fcffc61142d3aab2ea.js?t=1458294672" type="text/javascript"></script> 
+	  <!--<script src="<?=base_url()?>public/jm-dating/templates/jm-dating/cache/jmf_bddef3caa55d40fcffc61142d3aab2ea.js?t=1458294672" type="text/javascript"></script> 
 	  <script src="http://maps.google.com/maps/api/js?sensor=false&amp;v=3.exp&amp;libraries=places" type="text/javascript">
 	  </script>
+	  
 	   <script src="<?=base_url()?>public/jm-dating/templates/jm-dating/cache/jmf_0f6a47bfc694b5a4c93e4ed3f215cea9.js?t=1458294675" type="text/javascript" defer></script>
-	   
+	  --> 
 	    <script type="text/javascript">
-		jQuery(window).on('load',  function() {
+	/*	jQuery(window).on('load',  function() {
 				new JCaption('img.caption');
 			});
 jQuery(document).ready(function(){
@@ -128,7 +129,9 @@ window.setInterval(function(){var r;try{r=window.XMLHttpRequest?new XMLHttpReque
 		var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
 		if (raf) raf(cb);
 		else window.addEventListener('load', cb);
-	})();</script> 
+	})();
+*/
+	</script> 
 
 <link href="jm-dating/images/favicon.ico" rel="Shortcut Icon" /> <script type="text/javascript">
 	window.advancedSearch = 'Advanced search';
@@ -142,15 +145,12 @@ window.setInterval(function(){var r;try{r=window.XMLHttpRequest?new XMLHttpReque
  -->
  
 <!--   <script  type="text/javascript" src="<?=base_url()?>public/static/js/jquery.min.js"></script> -->
-   <script type="text/javascript" src="<?=base_url()?>public/static/js/handlebar1.0.js"></script>
+<script type="text/javascript" src="<?=base_url()?>public/static/js/handlebar1.0.js"></script>
 <script type="text/javascript" src="<?=base_url()?>public/static/js/util.js" ></script>
 <script type="text/javascript" src="<?=base_url()?>public/static/js/main.js" ></script>
 <script type="text/javascript" src="<?=base_url()?>public/static/js/user.js" ></script>
   
-  <script language="javascript" type="text/javascript">
+  <script  type="text/javascript">
     var URL_WEB = "<?=site_url()?>";
   </script>
-  <script type="text/javascript">
 
-</script>
-  
