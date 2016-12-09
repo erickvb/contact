@@ -109,9 +109,16 @@ class Usuario_model extends CI_Model {
 	
 	}
 	
-	public function obtenerPerfil(){
+	public function obtenerPerfil($id_usuario){
+		
+		$this->db->select('*');
+		$this->db->from('perfil');
+		$this->db->join('atributo', 'atributo.key = perfil.key');
+		$this->db->where('perfil.id_usuario', $id_usuario);
+		$this->db->where('perfil.estado >', 0);
 		
 		
+		return $this->db->get();
 	}
 	
 	public function obtenerGaleriaFotos($id_usuario){

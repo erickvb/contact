@@ -17,7 +17,12 @@ class User extends CI_Controller {
 	}
 	
 	public  function detail(){
-		
+		$idUser = $this->uri->segment('3');
+		$rs = $this->usuario_model->obtenerGaleriaFotos($idUser);
+		//$rs->row();
+		$rs2 =  $this->usuario_model->obtenerPerfil($idUser);
+		log_message('info', $this->db->last_query());
+		echo json_encode($rs2->result_array());
 		
 	}
 }
