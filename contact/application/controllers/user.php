@@ -18,11 +18,36 @@ class User extends CI_Controller {
 	
 	public  function detail(){
 		$idUser = $this->uri->segment('3');
-		$rs = $this->usuario_model->obtenerGaleriaFotos($idUser);
+		if(!is_numeric($idUser)){
+			exit();
+		}
+		echo "idUser:: ".$idUser;
+	
+		$usuario =  $this->usuario_model->obtenerById($idUser);
+		log_message('info', $this->db->last_query());
+		$rs =       $this->usuario_model->obtenerGaleriaFotos($idUser);
 		//$rs->row();
 		$rs2 =  $this->usuario_model->obtenerPerfil($idUser);
-		log_message('info', $this->db->last_query());
-		echo json_encode($rs2->result_array());
+		//print_r($usuario);
+		//exit();
 		
+		log_message('info', $this->db->last_query());
+		//echo json_encode($rs2->result_array());
+		$data_user = array(
+				"nick"=>$usuario->nick,
+				"nombre"=>$usuario->nombre,
+				"presentacion"=>"2",
+				"precioBase"=>"",
+				"telefonoContacto"=>$usuario->telefono,
+				"miembroDesde"=>"",
+				
+				"fotoPrincipal"=>$usuario->foto_principal,
+				"listaFotosPublico"=>"",
+				"acercaDe"=>"",
+				"ubicacion"=>"",
+				"listaAtributos"=>"",
+				
+		);
+		$this->load->view("usuario/detalle_user",$data_user);
 	}
 }

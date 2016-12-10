@@ -73,7 +73,8 @@ class Usuario_model extends CI_Model {
 	public function obtenerById($id){
 		$this->db->where('id_usuario',$id);
 		$query = $this->db->get('usuario',1);
-		return $query;
+		$rows = $query->custom_row_object(0,'Usuario');
+		return $rows;
 	}
 	
 	
