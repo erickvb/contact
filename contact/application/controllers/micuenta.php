@@ -52,10 +52,33 @@ class Micuenta extends CI_Controller {
 	
 	}
 	
+	public function doRegisterProfile(){
+		$this->load->model("perfil_model");
+		$curruser = $this->session->userdata('usuario');
+				
+		$auditoria = new Auditoria();
+		$auditoria->usuarioCreacion = 'juan';
+		
+		$profile = new Perfil();
+		$profile->key =  "presentacion";
+		$profile->valor =  $this->input->post("presentacion");
+		$profile->estado =  1;
+		$profile->auditoria = $auditoria;
+		
+		$profile2 = new Perfil();
+		$profile2->key =  "detalle";
+		$profile2->valor =  $this->input->post("detalle");
+		$profile2->estado =  1;
+		$profile2->auditoria = $auditoria;
+		
+		$rs = $this->perfil_model->register($profile);
+		$rs = $this->perfil_model->register($profile2);
+
+		echo $rs;
+	}
 	
 	public function  profile(){
 		$this->load->view("usuario/profile");
-		
 	}
 	
 	public function information(){
@@ -74,7 +97,7 @@ class Micuenta extends CI_Controller {
 	
 	public function updateInformation(){
 		$usuario = new Usuario();
-		
+		//exit("llego aki");
 		$curruser = $this->session->userdata('usuario');
 		
 		$usuario->id_nacionalidad =  $this->input->post("cboNacionalidad");
