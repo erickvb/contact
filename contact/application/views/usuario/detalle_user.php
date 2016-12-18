@@ -142,24 +142,19 @@
                
                </a>
             </div>
+            <!--  detalles imagenes-->
             <div class="djc_thumbnails djc_thumbs_gal3 " id="djc_thumbnails">
+               <? foreach ($listaFotosPublico as $galeria){?>
                <div class="djc_thumbnail djc_thumb_row">
-                  <a rel="/joomla30/jm-dating/components/com_djclassifieds/images/item/78_i14_thb.jpg" title="i14" href="./detalle-ellas_files/78_i14_thb.jpg">
-                  <img alt="i14" src="./detalle-ellas_files/78_i14_ths.jpg">
+                  <a title="<?=$nombre?>" href="<?=base_url()."public/static/image/".$galeria->imagen?>">
+                  <img alt="<?=$nombre?>" src="<?=base_url()."public/static/image/".$galeria->imagen?>">
                   </a>
                </div>
-               <div class="djc_thumbnail djc_thumb_row">
-                  <a rel="/joomla30/jm-dating/components/com_djclassifieds/images/item/78_headphone-mp3-music-3088-825x550_thb.jpg" title="headphone-mp3-music-3088-825x550" href="http://templates.joomla-monster.com/joomla30/jm-dating/components/com_djclassifieds/images/item/78_headphone-mp3-music-3088-825x550_thb.jpg">
-                  <img alt="headphone-mp3-music-3088-825x550" src="./detalle-ellas_files/78_headphone-mp3-music-3088-825x550_ths.jpg">
-                  </a>
-               </div>
-               <div class="djc_thumbnail djc_thumb_row">
-                  <a rel="/joomla30/jm-dating/components/com_djclassifieds/images/item/78_backpack-blur-bus-1714-819x550_thb.jpg" title="backpack-blur-bus-1714-819x550" href="http://templates.joomla-monster.com/joomla30/jm-dating/components/com_djclassifieds/images/item/78_backpack-blur-bus-1714-819x550_thb.jpg">
-                  <img alt="backpack-blur-bus-1714-819x550" src="./detalle-ellas_files/78_backpack-blur-bus-1714-819x550_ths.jpg">
-                  </a>
-               </div>
+            <?}?>
+              
                <div class="clear_both"></div>
             </div>
+            
             <a id="djc_lb_0" rel="lightbox-djitem" title="i14" href="./detalle-ellas_files/78_i14_thb.jpg" style="display: none;"></a>
             <a id="djc_lb_1" rel="lightbox-djitem" title="headphone-mp3-music-3088-825x550" href="http://templates.joomla-monster.com/joomla30/jm-dating/components/com_djclassifieds/images/item/78_headphone-mp3-music-3088-825x550_thb.jpg" style="display: none;"></a>
             <a id="djc_lb_2" rel="lightbox-djitem" title="backpack-blur-bus-1714-819x550" href="http://templates.joomla-monster.com/joomla30/jm-dating/components/com_djclassifieds/images/item/78_backpack-blur-bus-1714-819x550_thb.jpg" style="display: none;"></a>

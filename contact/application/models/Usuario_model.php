@@ -122,11 +122,13 @@ class Usuario_model extends CI_Model {
 		return $this->db->get();
 	}
 	
-	public function obtenerGaleriaFotos($id_usuario){
+	public function obtenerGaleriaPublicos($id_usuario,$tipo_perfil){
 		$this->db->where('id_usuario', $id_usuario);
+		$this->db->where('tipo_galeria', $tipo_perfil);
+		$this->db->where('tipo_acceso', 1);
 		$rs = $this->db->get('galeria');
-		//$rows = $query->custom_result_object('Usuario');
-		return $rs;
+		$rows = $rs->custom_result_object('Galeria');
+		return $rows;
 		
 	}
 	

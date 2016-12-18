@@ -25,7 +25,8 @@ class User extends CI_Controller {
 	
 		$usuario =  $this->usuario_model->obtenerById($idUser);
 		log_message('info', $this->db->last_query());
-		$rs =       $this->usuario_model->obtenerGaleriaFotos($idUser);
+		$tipo_perfil = 1; //foto 
+		$listaFotoPublicos =    $this->quitar_imagen_principal($this->usuario_model->obtenerGaleriaPublicos($idUser, $tipo_perfil), $usuario->foto_principal) ;
 		//$rs->row();
 		$rs2 =  $this->usuario_model->obtenerPerfil($idUser);
 		//print_r($usuario);
@@ -42,7 +43,7 @@ class User extends CI_Controller {
 				"miembroDesde"=>"",
 				
 				"fotoPrincipal"=>$usuario->foto_principal,
-				"listaFotosPublico"=>"",
+				"listaFotosPublico"=>$listaFotoPublicos,
 				"acercaDe"=>"",
 				"ubicacion"=>"",
 				"listaAtributos"=>"",
@@ -50,4 +51,19 @@ class User extends CI_Controller {
 		);
 		$this->load->view("usuario/detalle_user",$data_user);
 	}
+	
+	private function quitar_imagen_principal($lista_perfil,$imagen_principal){
+		$nuevaLista = array();
+		
+		foreach ($lista_perfil as  $row){
+			if($row->imagen==$imagen_principal){
+				
+			}else{
+				$nuevaLista[]= $row;
+			}
+		}
+		return  $nuevaLista;
+	}
+	
+	
 }
