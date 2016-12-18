@@ -17,6 +17,8 @@ class Galeria {
 			// 			$this->last_login = DateTime::createFromFormat('U', $value);
 			// 		}
 		//$this->x[$name] = $value;	
+		////
+		
 	}
 	
 	public function __get($name)
