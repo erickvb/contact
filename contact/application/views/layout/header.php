@@ -14,6 +14,7 @@
 <link
 href="jm-dating/?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" /><link
 href="jm-dating/?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" /><link
+rel="stylesheet" href="<?=base_url()?>public/static/css/general.css" type="text/css" /><link
 rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" type="text/css" /><link
 rel="stylesheet" href="<?=base_url()?>public/jm-dating/plugins/system/djtop/assets/djtop.css" type="text/css" /><link
 rel="stylesheet" href="<?=base_url()?>public/jm-dating/media/jui/css/chosen.css" type="text/css" /><link
@@ -64,6 +65,8 @@ rel="stylesheet" href="<?=base_url()?>public/jm-dating/templates/jm-dating/css/d
 		}</style> 
 	
 	<script src="<?=base_url()?>public/static/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="<?=base_url()?>public/static/js/jquery.validate.js" type="text/javascript"></script>
+	<script src="<?=base_url()?>public/static/js/jquery.form.js" type="text/javascript"></script>
 	<!-- <script src="<?=base_url()?>public/jm-dating/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
 	-->
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script> 

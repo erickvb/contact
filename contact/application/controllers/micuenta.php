@@ -55,28 +55,86 @@ class Micuenta extends CI_Controller {
 	public function doRegisterProfile(){
 		$this->load->model("perfil_model");
 		$curruser = $this->session->userdata('usuario');
-				
+		
 		$auditoria = new Auditoria();
 		$auditoria->usuarioCreacion = 'juan';
 		
-		$profile = new Perfil();
-		$profile->key =  "presentacion";
-		$profile->valor =  $this->input->post("presentacion");
-		$profile->estado =  1;
-		$profile->auditoria = $auditoria;
+//Obtener la session de los atributos y recorrer en foreach------------------------------------
 		
-		$profile2 = new Perfil();
-		$profile2->key =  "detalle";
-		$profile2->valor =  $this->input->post("detalle");
-		$profile2->estado =  1;
-		$profile2->auditoria = $auditoria;
+		$a = new Atributo();
+		$a->key = "presentacion";
+		$b = new Atributo();
+		$b->key = "detalle";
+		$c = new Atributo();
+		$c->key = "estatura";
+		$d = new Atributo();
+		$d->key = "peso";
+		$e = new Atributo();
+		$e->key = "contextura";
+		$f = new Atributo();
+		$f->key = "color_piel";
+		$g = new Atributo();
+		$g->key = "color_cabello";
+		$h = new Atributo();
+		$h->key = "color_ojo";
+		$i = new Atributo();
+		$i->key = "medidas";
+		$j = new Atributo();
+		$j->key = "servicios";
+		$k = new Atributo();
+		$k->key = "precio";
+		$l = new Atributo();
+		$l->key = "horario";
 		
-		$rs = $this->perfil_model->register($profile);
-		$rs = $this->perfil_model->register($profile2);
+		$atributos = array($a, $b, $c,$d, $e,$f, $g,$h, $i,$j, $k,$l);
+//-----------------------------------------------------------------------------		
+		
+		$cboPeso = $this->input->post("cboPeso");
+		$cboContextura = $this->input->post("cboContextura");
+		$cboEstatura = $this->input->post("cboEstatura");
+		$cboColorPiel = $this->input->post("cboColorPiel");
+		$cboColorOjo = $this->input->post("cboColorOjo");
+		$cboColorCabello = $this->input->post("cboColorCabello");
+		$cboMoneda = $this->input->post("cboMoneda");		
+		
+		foreach ($atributos as $value) {					
+			$profile = new Perfil();
+			$profile->key = $value->key;
+			
+			if($value->key == "presentacion"){
+			$profile->valor =  $this->input->post("presentacion");
+			}elseif ($value->key == "detalle"){
+			$profile->valor =  $this->input->post("detalle");
+			}elseif ($value->key == "estatura"){
+			$profile->valor = $cboEstatura;
+			}elseif ($value->key == "peso"){
+			$profile->valor = $cboPeso;
+			}elseif ($value->key == "contextura"){
+			$profile->valor =  $cboContextura;			
+			}elseif ($value->key == "color_piel"){
+			$profile->valor =  $cboColorPiel;
+			}elseif ($value->key == "color_cabello"){
+			$profile->valor =  $cboColorCabello;
+			}elseif ($value->key == "color_ojo"){
+			$profile->valor =  $cboColorOjo;
+			}elseif ($value->key == "medidas"){
+			$profile->valor =  $this->input->post("busto"). ",".$this->input->post("cintura").",".$this->input->post("cadera");
+			}elseif ($value->key == "servicios"){
+			$profile->valor =  $this->input->post("a"). ",".$this->input->post("v").",".$this->input->post("or");
+			}elseif ($value->key == "precio"){
+			$profile->valor =  $cboMoneda . ",".$this->input->post("precioDesde"). ",".$this->input->post("precioHasta");
+			}elseif ($value->key == "horario"){
+			$profile->valor = $this->input->post("horario") ;
+			}
+			
+			$profile->estado =  1;
+			$profile->auditoria = $auditoria;
+			$rs = $this->perfil_model->register($profile);
+		}
 
 		echo $rs;
 	}
-	
+		
 	public function  profile(){
 		$this->load->view("usuario/profile");
 	}
