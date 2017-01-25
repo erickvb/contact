@@ -60,6 +60,7 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array('auditoria','galeria','usuario','atributo','database','session','perfil');
 
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers

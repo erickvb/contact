@@ -130,7 +130,7 @@ myUser.listUser();
                                     </div>
                                  </div>
                                  <div class="see_details_box">
-                                    <a class="see_details" href="jm-dating/single-ad-view-with-bids" >More about me</a>
+                                    <a class="see_details" href="<?=site_url('/user/detail')?>/{{id_usuario}}" >More about me</a>
                                  </div>
                               </div>
                            </div>
